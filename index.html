@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For You ❤️</title>
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #ff758c, #ff7eb3);
+  overflow: hidden;
+  color: white;
+  text-align: center;
+}
+
+.container {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 20px;
+}
+
+.paper {
+  background: white;
+  color: black;
+  padding: 20px;
+  border-radius: 15px;
+  max-width: 500px;
+  margin: auto;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  font-size: 14px;
+  line-height: 1.5;
+  height: 300px;
+  overflow-y: auto;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 15px;
+  border: none;
+  border-radius: 25px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.yes {
+  background: #28a745;
+  color: white;
+}
+
+.no {
+  background: #dc3545;
+  color: white;
+  position: absolute;
+}
+
+.heart {
+  position: absolute;
+  color: red;
+  animation: float 5s infinite;
+}
+
+@keyframes float {
+  from {transform: translateY(100vh);}
+  to {transform: translateY(-10vh);}
+}
+</style>
+</head>
+
+<body>
+
+<audio autoplay loop>
+  <source src="https://www2.cs.uic.edu/~i101/SoundFiles/StarWars60.wav" type="audio/mpeg">
+</audio>
+
+<div class="container">
+  <h2>💖 Please Read 💖</h2>
+
+  <div class="paper">
+    kya tum sach mein pyaar nahin karti ho Thora bhi... <br><br>
+
+    I know Ki Mai Sundar nhi dikhta tum kaha itna pyari sundar Or mai kaha.. <br><br>
+
+    But I really love you 😭 <br><br>
+
+    Hmm mujhe pata h tum relationship me nhi aana chahti... par hamlog me nhi hoga trust me... <br><br>
+
+    Tum kisi or ko like karti ho sakta hai... jaruri nhi hai ki mai tumse pyaar karta hu to tum bhi karo... <br><br>
+
+    Mai commitment par believe karta hu... <br><br>
+
+    I always support you... chalo sath me successful hote hai 🙂 <br><br>
+
+    Take time... soch kar reply dena... <br><br>
+
+    Agar kabhi lage ki ha ek ladka tha jo bahut pyaar karta tha... to pls msg karna... <br><br>
+
+    Mere liye sirf aap ho... ❤️
+  </div>
+
+  <br>
+
+  <button class="yes" onclick="yesClick()">YES ❤️</button>
+  <button class="no" id="noBtn">NO 💔</button>
+
+</div>
+
+<script>
+function yesClick(){
+  alert("I Love You Too ❤️🥰");
+}
+
+const noBtn = document.getElementById("noBtn");
+
+noBtn.addEventListener("mouseover", () => {
+  noBtn.style.top = Math.random() * window.innerHeight + "px";
+  noBtn.style.left = Math.random() * window.innerWidth + "px";
+});
+
+// floating hearts
+setInterval(() => {
+  let heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "❤️";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = (Math.random() * 20 + 10) + "px";
+  document.body.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 5000);
+}, 300);
+</script>
+
+</body>
+</html>
